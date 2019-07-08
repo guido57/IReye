@@ -41,7 +41,6 @@ $ sudo apt-get update
 $ sudo apt-get install uv4l uv4l-server uv4l-uvc uv4l-webrtc
 ```
 3. reboot
-
 After rebooting, uv4l is supposed to be installed and available for next use. 
 
 4. Test uv4l-server 
