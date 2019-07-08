@@ -16,11 +16,27 @@ See the logic diagram below also.
 2. Install "Raspbian Stretch with Desktop" Raspbian Buster with Desktop" , I tested:
    - Buster "2019-06-20-raspbian-buster-full.img" downloaded and with "installation guide" at [Download Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/)
    - Stretch "2017-11-29-raspbian-stretch.img"
+   - Buster "2019-06-20-raspbian-buster-full.img" downloaded and with "installation guide" at [Download Raspbian Stretch]
+3. (Optional, if you don't have screen, keyboard and mouse) Prepare the SD you just created for headless operations following these instructions. See also [Raspbian Stretch Headless Setup Procedure](https://www.raspberrypi.org/forums/viewtopic.php?t=191252) 
 
-3. (Optional, if you don't have screen, keyboard and mouse) Prepare the SD you just created for headless operations following these instructions. [
-Raspbian Stretch Headless Setup Procedure](https://www.raspberrypi.org/forums/viewtopic.php?t=191252) 
+### Install uv4l library
 
-
+Install the uv4l library. See also [UV4L for Raspberryy PI Installation Procedure](https://www.linux-projects.org/uv4l/installation/) 
+ 
+0. Update apt repositories 
+```
+$ curl http://www.linux-projects.org/listing/uv4l_repo/lpkey.asc | sudo apt-key add -
+```
+1. add the following line to the file /etc/apt/sources.list:
+```
+$ deb http://www.linux-projects.org/listing/uv4l_repo/raspbian/stretch stretch main
+```
+2. Update the system to fetch and install the packages:
+```
+$ sudo apt-get update
+$ sudo apt-get install uv4l uv4l-raspicam
+```
+The above two commands will upgrade UV4L to the most recent version, if it’s already installed.
 ### Highlights
  
  
