@@ -4,14 +4,14 @@ An unattended Raspberry PI 3 with webcam and Infrared remote control
 ### Overview
 With a Raspberry PI, equipped with a loudspeaker and optionally with a HDMI screen, you can connect to it to:
 - issue IR commands to a TV or similar
--view the USB camera connected to the PI
--listen from the USB microphone connected to the PI
+- view the USB camera connected to the PI
+- listen from the USB microphone connected to the PI
 
 LIBRARIES
 
--The uv4l software platform, with uv4l web and streaming servers run in the PI.
--The lirc libray is installed on the PI. 
--See the logic diagram below also.
+- The uv4l software platform, with uv4l web and streaming servers run in the PI.
+- The lirc libray is installed on the PI. 
+- See the logic diagram below also.
 
 ### Prepare your Raspberry
 0. I used a [Raspberry PI 3 Model B Scheda madre CPU 1.2 GHz Quad Core, 1 GB RAM](https://www.amazon.it/gp/product/B01CD5VC92/ref=oh_aui_search_detailpage?ie=UTF8&psc=1) bought at Amazon
@@ -44,13 +44,13 @@ $ sudo apt-get update
 $ sudo apt-get install uv4l uv4l-server uv4l-uvc uv4l-webrtc
 ```
 3. reboot
-After rebooting, uv4l is supposed to be installed and available for next use. 
+- After rebooting, uv4l is supposed to be installed and available for next use. 
 
 4. Test uv4l-server 
 Navigate to [http://localhost:8090](http://localhost:8090)
 This page should appear:
 
-5. Click on WEBRTC
+5. Click on WEBRTC and view your camera
 This page should appear:
  
 6. Clickink on Call (the green button) the image of your camera should appear on the "remote" rectangle
