@@ -56,7 +56,8 @@ This page should appear:
 6. Clickink on Call (the green button) the image of your camera should appear on the "remote" rectangle
 
 ### Add SSL autosigned certificate for uv4l https web server
-This is mandatory for recent Google Chrome and other browsers versions.
+For Google Chrome and other recent browsers versions is mandatory to use https insead of http.
+
 0. Generate a selfsigned certificate
 '''
 $ sudo openssl genrsa -out selfsign.key 2048 && openssl req -new -x509 -key selfsign.key -out selfsign.crt -sha256
