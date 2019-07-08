@@ -2,10 +2,13 @@
 An unattended Raspberry PI 3 with webcam and Infrared remote control
 
 ### Overview
-The Raspberry PI, equipped with a loudspeaker and optionally with a HDMI screen lets you to remote connect to:
+With a Raspberry PI, equipped with a loudspeaker and optionally with a HDMI screen, you can connect to it to:
 issue IR commands to a TV or similar
-view and listen from the USB camera connected to the PI
-The uv4l software platform, with web server runs in the PI.
+view the USB camera connected to the PI
+listen from the USB microphone connected to the PI
+
+LIBRARIES
+The uv4l software platform, with uv4l web and streaming servers run in the PI.
 The lirc libray is installed on the PI. 
 
 See the logic diagram below also.
