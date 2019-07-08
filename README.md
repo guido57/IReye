@@ -19,8 +19,13 @@ See the logic diagram below also.
    - Buster "2019-06-20-raspbian-buster-full.img" downloaded and with "installation guide" at [Download Raspbian Stretch]
 3. (Optional, if you don't have screen, keyboard and mouse) Prepare the SD you just created for headless operations following these instructions. See also [Raspbian Stretch Headless Setup Procedure](https://www.raspberrypi.org/forums/viewtopic.php?t=191252) 
 
+### Install the USB camera and microphone
+0. I tested Logitech C525 succesfully. Simply plug it into any USB port. C525 has an integrated microphone but if yours doesn't have it, plug a USB microphone in any USB port.
+1. Test your USB webcam with chromium-browser navigating to a site like [webrtc Hacks](https://webrtchacks.github.io/WebRTC-Camera-Resolution/)
+2. Test your USB microphone (integrated with the webcam or not) with chromium-browser navigating to https://www.google.com and using the speech recognition 
+
 ### Install uv4l library
-Install the uv4l library. See also [UV4L for Raspberryy PI Installation Procedure](https://www.linux-projects.org/uv4l/installation/) 
+Install the uv4l library. For details see also [UV4L for Raspberry PI Installation Procedure](https://www.linux-projects.org/uv4l/installation/) 
  
 0. Add the uv4l repository to the list of apt repositories
 ```
@@ -33,16 +38,30 @@ $ deb http://www.linux-projects.org/listing/uv4l_repo/raspbian/stretch stretch m
 2. Install (or update if already installed):
 ```
 $ sudo apt-get update
-$ sudo apt-get install uv4l uv4l-server uv4l-uvc 
+$ sudo apt-get install uv4l uv4l-server uv4l-uvc uv4l-webrtc
 ```
-Now uv4l is installed and available for next use. 
+3. reboot
+After rebooting, uv4l is supposed to be installed and available for next use. 
 
-### Install the USB camera and microphone
-0. I tested Logitech C525 succesfully. Simply plug it into any USB port. C525 has an integrated microphone but if yours doesn't have it, plug a USB microphone in any USB port.
-1. Test your USB webcam with chromium-browser navigating to a site like [webrtc Hacks](https://webrtchacks.github.io/WebRTC-Camera-Resolution/)
-2. Test your USB microphone (integrated with the webcam or not) with chromium-browser navigating to https://www.google.com and using the speech recognition 
+4. Test uv4l-server 
+Navigate to [http://localhost:8090](http://localhost:8090)
+This page should appear:
+
+5. Click on WEBRTC
+This page should appear:
  
- 
+6. Clickink on Call (the green button) the image of your camera should appear on the "remote" rectangle
+
+### Add SSL autosigned certificate for uv4l https web server
+This is mandatory for recent Google Chrome and other browsers versions.
+0. Generate a selfsigned certificate
+'''
+$ sudo openssl genrsa -out selfsign.key 2048 && openssl req -new -x509 -key selfsign.key -out selfsign.crt -sha256
+'''
+1. Copy the certificate to the proper folder
+
+1. Add the certificate to uv4l
+
 ### Screenshots
 
 ### Logic Diagram 
