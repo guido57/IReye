@@ -13,6 +13,9 @@ LIBRARIES
 - The lirc libray is installed on the PI. 
 - See the logic diagram below also.
 
+### Hardware picture
+[![](https://github.com/guido57/IReye/blob/master/screenshots/IReye%20picture%20with%20labels.PNG)](https://github.com/guido57/IReye/blob/master/screenshots/IReye%20picture%20with%20labels.PNG)
+
 ### Prepare your Raspberry
 0. I used a [Raspberry PI 3 Model B Scheda madre CPU 1.2 GHz Quad Core, 1 GB RAM](https://www.amazon.it/gp/product/B01CD5VC92/ref=oh_aui_search_detailpage?ie=UTF8&psc=1) bought at Amazon
 1. Start from a clean sd: I tested 8M and 32M SD Samsung cards.
