@@ -61,13 +61,22 @@ This page should appear:
 ### Add SSL autosigned certificate for uv4l https web server
 For Google Chrome and other recent browsers versions is mandatory to use https insead of http.
 
-0. Generate a selfsigned certificate
-'''
+0. Generate a selfsigned certificate and use it in uv4l web server
+```
 $ sudo openssl genrsa -out selfsign.key 2048 && openssl req -new -x509 -key selfsign.key -out selfsign.crt -sha256
-'''
-1. Copy the certificate to the proper folder
-
-1. Add the certificate to uv4l
+```
+1. Move the certificate to the proper folder
+```
+$ sudo mv selfsign.* /etc/uv4l/
+```
+2. Add the certificate to uv4l changing the following text in /etc/uv4l/uv4l-uvc.conf
+```
+### HTTPS options:
+server-option = --use-ssl=yes
+server-option = --ssl-private-key-file=/etc/uv4l/selfsign.key
+server-option = --ssl-certificate-file=/etc/uv4l/selfsign.crt
+```
+3. After rebooting, verify that [https://localhost:8090](https://localhost:8090) is accessible by your Raspberry PI browser.
 
 ### Screenshots
 
