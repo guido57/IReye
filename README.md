@@ -78,6 +78,29 @@ server-option = --ssl-certificate-file=/etc/uv4l/selfsign.crt
 ```
 3. After rebooting, verify that [https://localhost:8090](https://localhost:8090) is accessible by your Raspberry PI browser.
 
+### Enable your USB microphone in uv4l
+1. Change (or create) your ALSA config file /home/pi/.asoundrc
+```
+pcm.!default {
+  type asym
+  capture.pcm "mic"
+  playback.pcm "speaker"
+}
+pcm.mic {
+  type plug
+  slave {
+    pcm "hw:1,0"
+  }
+}
+pcm.speaker {
+  type plug
+  slave {
+    pcm "hw:0,0"
+  }
+}
+```
+2. after rebooting your USB microphone will be the default one and your RPI speaker (the headphone jack) will be the default speaker.
+
 ### Screenshots
 
 ### Logic Diagram 
