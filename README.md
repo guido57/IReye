@@ -60,7 +60,7 @@ This page should appear:
 
 
  
-6. Clickink on Call (the green button) the image of your camera should appear on the "remote" rectangle
+6. Clicking on Call (the green button) the image of your camera should appear on the "remote" rectangle
 
 ### Add SSL autosigned certificate for uv4l https web server
 For Google Chrome and other recent browsers versions is mandatory to use https insead of http.
