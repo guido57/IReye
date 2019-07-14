@@ -51,6 +51,8 @@ $ sudo apt-get install uv4l uv4l-server uv4l-uvc uv4l-webrtc
 4. Test uv4l-server 
 Navigate to [http://localhost:8090](http://localhost:8090)
 This page should appear:
+[![](https://github.com/guido57/IReye/blob/master/screenshots/UV4L%20Streaming%20Server%20Home%20Page.PNG)](https://github.com/guido57/IReye/blob/master/screenshots/UV4L%20Streaming%20Server%20Home%20Page.PNG.PNG)
+
 
 5. Click on WEBRTC and view your camera
 This page should appear:
