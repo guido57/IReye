@@ -19,11 +19,10 @@ LIBRARIES
 ### Prepare your Raspberry
 0. I used a [Raspberry PI 3 Model B Scheda madre CPU 1.2 GHz Quad Core, 1 GB RAM](https://www.amazon.it/gp/product/B01CD5VC92/ref=oh_aui_search_detailpage?ie=UTF8&psc=1) bought at Amazon
 1. Start from a clean sd: I tested 8M and 32M SD Samsung cards.
-2. Install "Raspbian Stretch with Desktop" Raspbian Buster with Desktop" , I tested:
-   - Buster "2019-06-20-raspbian-buster-full.img" downloaded and with "installation guide" at [Download Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/)
-   - Stretch "2017-11-29-raspbian-stretch.img"
-   - Buster "2019-06-20-raspbian-buster-full.img" downloaded and with "installation guide" at [Download Raspbian Stretch]
-3. (Optional, if you don't have screen, keyboard and mouse) Prepare the SD you just created for headless operations following these instructions. See also [Raspbian Stretch Headless Setup Procedure](https://www.raspberrypi.org/forums/viewtopic.php?t=191252) 
+2. Install "Raspbian Stretch with Desktop", I tested:
+   - Stretch "	2018-11-13-raspbian-stretch.zip" downloaded and with "installation guide" at [Download Raspbian Stretch](http://downloads.raspberrypi.org/raspbian/images/raspbian-2018-11-15/)
+   - at the moment (14th July 2019) Buster doesn't work with uv4l: SSL certificate seems not working!
+ 3. (Optional, if you don't have screen, keyboard and mouse) Prepare the SD you just created for headless operations following these instructions. See also [Raspbian Stretch Headless Setup Procedure](https://www.raspberrypi.org/forums/viewtopic.php?t=191252) 
 
 ### Install the USB camera and microphone
 0. I tested Logitech C525 succesfully. Simply plug it into any USB port. C525 has an integrated microphone but if yours doesn't have it, plug a USB microphone in any USB port.
@@ -100,6 +99,23 @@ pcm.speaker {
 }
 ```
 2. after rebooting your USB microphone will be the default one and your RPI speaker (the headphone jack) will be the default speaker.
+3. list the available PCM capture devices end find the line of the proper configuration:
+```
+arecord --list-pcms
+```
+get the proper configuration. For me it is: 
+```
+hw:CARD=C525,DEV=0
+    HD Webcam C525, USB Audio
+    Direct hardware device without any conversions
+```
+which is at the 11th position (starting from 0) in the list.
+```
+Now uncomment and set the following line in /etc/uv4l/uv4l-uvc.conf
+server-option = --webrtc-recdevice-index=11
+```
+After rebooting, even the USB microphone should work when uv4l web server is called at: https://raspberryPI_IP_address:8090/stream/rtc/
+
 
 ### Screenshots
 
