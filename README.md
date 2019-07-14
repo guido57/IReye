@@ -119,7 +119,7 @@ Now uncomment and set the following line in /etc/uv4l/uv4l-uvc.conf
 ```
 server-option = --webrtc-recdevice-index=11
 ```
-After rebooting, even the USB microphone should work when uv4l web server is called at: [https://raspberryPI_IP_address:8090/stream/rtc/]
+After rebooting, even the USB microphone should work when uv4l web server is called at: [https://your_raspberry-PI_IP_address:8090/stream/rtc/](https://your_raspberry-PI_IP_address:8090/stream/rtc/)
 
 
 ### Screenshots
