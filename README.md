@@ -122,6 +122,64 @@ server-option = --webrtc-recdevice-index=11
 After rebooting, even the USB microphone should work when uv4l web server is called at: [https://your_raspberry-PI_IP_address:8090/stream/rtc/](https://your_raspberry-PI_IP_address:8090/stream/rtc/)
 
 
+### Install and configure lirc library (Infrared transmitter and receiver)
+
+1. install lirc
+```
+sudo apt-get install lirc
+```
+2. Add the following lines to /etc/modules file
+In my Raspberry PI 3 circuit, the infrared receiver is connected at GPIO 23 (connector pin 16) while the infrared LED transmittter at GPIO 22 (connector pin 15). Change them accordingly to your circuit.
+```
+lirc_dev
+lirc_rpi gpio_in_pin=23 gpio_out_pin=22
+```
+
+3. Add the following lines to /etc/lirc/hardware.conf file
+```
+LIRCD_ARGS="--uinput --listen"
+LOAD_MODULES=true
+DRIVER="default"
+DEVICE="/dev/lirc0"
+MODULES="lirc_rpi"
+```
+
+4. Update the following line in /boot/config.txt
+See point 2 for the correct pin settings.
+```
+dtoverlay=lirc-rpi,gpio_in_pin=23,gpio_out_pin=2
+```
+5. Update the following lines in /etc/lirc/lirc_options.conf
+```
+driver    = default
+device    = /dev/lirc0
+```
+6. Restart the lirc daemon and check its status 
+```
+sudo /etc/init.d/lircd stop
+sudo /etc/init.d/lircd start
+sudo /etc/init.d/lircd status
+```
+then reboot
+```
+sudo reboot
+```
+
+### Test lirc recorder
+1. To test if lirc driver is working:
+```
+sudo /etc/init.d/lircd stop
+mode2 -d /dev/lirc0
+```
+2. press a key of any infrared remote control in front of the IR LED receiver and you should see multiple lines like below
+```
+pulse 560
+space 1706
+pulse 535
+```
+
+
+
 ### Screenshots
 
 ### Logic Diagram 
