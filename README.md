@@ -21,8 +21,8 @@ LIBRARIES
 1. Start from a clean sd: I tested 8M and 32M SD Samsung cards.
 2. Install "Raspbian Stretch with Desktop", I tested:
    - Stretch "	2018-11-13-raspbian-stretch.zip" downloaded and with "installation guide" at [Download Raspbian Stretch](http://downloads.raspberrypi.org/raspbian/images/raspbian-2018-11-15/)
-   - at the moment (14th July 2019) Buster doesn't work with uv4l: SSL certificate seems not working!
- 3. (Optional, if you don't have screen, keyboard and mouse) Prepare the SD you just created for headless operations following these instructions. See also [Raspbian Stretch Headless Setup Procedure](https://www.raspberrypi.org/forums/viewtopic.php?t=191252) 
+   - DON'T DON'T DON'T install any newer version of the Raspian Kernel than this (Linux 4.14). Otherwise IR infrared transmitter won't work! Never do "sudo apt-get upgrade"
+   3. (Optional, if you don't have screen, keyboard and mouse) Prepare the SD you just created for headless operations following these instructions. See also [Raspbian Stretch Headless Setup Procedure](https://www.raspberrypi.org/forums/viewtopic.php?t=191252) 
 
 ### Install the USB camera and microphone
 0. I tested Logitech C525 succesfully. Simply plug it into any USB port. C525 has an integrated microphone but if yours doesn't have it, plug a USB microphone in any USB port.
@@ -67,7 +67,7 @@ For Google Chrome and other recent browsers versions is mandatory to use https i
 
 0. Generate a selfsigned certificate and use it in uv4l web server
 ```
-$ sudo openssl genrsa -out selfsign.key 2048 && openssl req -new -x509 -key selfsign.key -out selfsign.crt -sha256
+$ sudo openssl genrsa -out selfsign.key 2048 && sudo openssl req -new -x509 -key selfsign.key -out selfsign.crt -sha256
 ```
 1. Move the certificate to the proper folder
 ```
