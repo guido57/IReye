@@ -1,7 +1,7 @@
 # IReye
 An unattended Raspberry PI 3 with webcam and Infrared remote control
 
-### Overview
+## Overview
 With a Raspberry PI, equipped with a loudspeaker and optionally with a HDMI screen, you can connect to it to:
 - issue IR commands to a TV or similar
 - view the USB camera connected to the PI
