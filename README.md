@@ -17,9 +17,9 @@ With a Raspberry PI, equipped with a loudspeaker and optionally with a HDMI scre
 [![](https://github.com/guido57/IReye/blob/master/screenshots/IReye%20picture%20with%20labels.PNG)](https://github.com/guido57/IReye/blob/master/screenshots/IReye%20picture%20with%20labels.PNG)
 
 # Prepare your Raspberry
-###0. I used a [Raspberry PI 3 Model B Scheda madre CPU 1.2 GHz Quad Core, 1 GB RAM](https://www.amazon.it/gp/product/B01CD5VC92/ref=oh_aui_search_detailpage?ie=UTF8&psc=1) bought at Amazon
-###1. Start from a clean sd: I tested 8M and 32M SD Samsung cards.
-###2. Install "Raspbian Stretch with Desktop", I tested:
+### 0. I used a [Raspberry PI 3 Model B Scheda madre CPU 1.2 GHz Quad Core, 1 GB RAM](https://www.amazon.it/gp/product/B01CD5VC92/ref=oh_aui_search_detailpage?ie=UTF8&psc=1) bought at Amazon
+### 1. Start from a clean sd: I tested 8M and 32M SD Samsung cards.
+### 2. Install "Raspbian Stretch with Desktop", I tested:
    - Stretch "	2018-11-13-raspbian-stretch.zip" downloaded and with "installation guide" at [Download Raspbian Stretch](http://downloads.raspberrypi.org/raspbian/images/raspbian-2018-11-15/)
    - DON'T DON'T DON'T install any newer version of the Raspian Kernel than this (Linux 4.14). Otherwise IR infrared transmitter won't work! Never do "sudo apt-get upgrade"
    3. (Optional, if you don't have screen, keyboard and mouse) Prepare the SD you just created for headless operations following these instructions. See also [Raspbian Stretch Headless Setup Proc##edure](https://www.raspberrypi.org/forums/viewtopic.php?t=191252) 
