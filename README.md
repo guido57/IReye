@@ -66,17 +66,20 @@ For Google Chrome and other recent browsers versions is mandatory to use https i
 ``` sudo openssl genrsa -out selfsign.key 2048 && sudo openssl req -new -x509 -key selfsign.key -out selfsign.crt -sha256
 ``` 
 ### 1. Move the certificate to the proper folder
+``` 
 $ sudo mv selfsign.* /etc/uv4l/
 ``` 
 ### 2. Add the certificate to uv4l changing the following text in /etc/uv4l/uv4l-uvc.conf
-``
-TPS options:
+```
+#HTTPS options:
 server-option = --use-ssl=yes
 server-option = --ssl-private-key-file=/etc/uv4l/selfsign.key
 server-option = --ssl-certificate-file=/etc/uv4l/selfsign.crt
-``. After rebooting, verify that [https://localhost:8090](https://localhost:8090) is accessible by your Raspberry PI browse### r
-Enable your USB microphone in uv4l
-1. Change (or create) your ALSA config file /home/pi/.asoundrc
+```
+### 3. After rebooting, verify that[https://localhost:8090](https://localhost:8090) is accessible by your Raspberry PI browser
+
+# Enable your USB microphone in uv4l
+### 1. Change (or create) your ALSA config file /home/pi/.asoundrc
 ```
 pcm.!default {
   type asym
@@ -96,12 +99,13 @@ pcm.speaker {
   }
 }
 ```
-2. after rebooting your USB microphone will be the default one and your RPI speaker (the headphone jack) will be the default speaker.
-3. list the available PCM capture devices end find the line of the proper configuration:
+### 2. after rebooting your USB microphone will be the default one and your RPI speaker (the headphone jack) will be the default speaker.
+### 3. list the available PCM capture devices end find the line of the proper configuration:
 ```
 arecord --list-pcms
 ```
-get the proper configuration. For me it is: 
+
+my working result is: 
 ```
 hw:CARD=C525,DEV=0
     HD Webcam C525, USB Audio
@@ -115,20 +119,20 @@ server-option = --webrtc-recdevice-index=11
 After rebooting, even the USB microphone should work when uv4l web server is called at: [https://your_raspberry-PI_IP_address:8090/stream/rtc/](https://your_raspberry-PI_IP_address:8090/stream/rtc/)
 
 
-### Install and configure lirc library (Infrared transmitter and receiver)
+# Install and configure lirc library (Infrared transmitter and receiver)
 
-1. install lirc
+### 1. install lirc
 ```
 sudo apt-get install lirc
 ```
-2. Add the following lines to /etc/modules file
+### 2. Add the following lines to /etc/modules file
 In my Raspberry PI 3 circuit, the infrared receiver is connected at GPIO 23 (connector pin 16) while the infrared LED transmittter at GPIO 22 (connector pin 15). Change them accordingly to your circuit.
 ```
 lirc_dev
 lirc_rpi gpio_in_pin=23 gpio_out_pin=22
 ```
 
-3. Add the following lines to /etc/lirc/hardware.conf file
+### 3. Add the following lines to /etc/lirc/hardware.conf file
 ```
 LIRCD_ARGS="--uinput --listen"
 LOAD_MODULES=true
@@ -137,12 +141,13 @@ DEVICE="/dev/lirc0"
 MODULES="lirc_rpi"
 ```
 
-4. Update the following line in /boot/config.txt
+#
+##   Update the following line in /boot/config.txt
 See point 2 for the correct pin settings.
 ```
 dtoverlay=lirc-rpi,gpio_in_pin=23,gpio_out_pin=2
 ```
-5. Update the following lines in /etc/lirc/lirc_options.conf
+### 5. Update the following lines in /etc/lirc/lirc_options.conf
 ```
 driver    = default
 device    = /dev/lirc0
