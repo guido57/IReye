@@ -38,7 +38,7 @@ def send_ir_command():
     command = " ".join(command)
     subprocess.call(command, shell=True)
     return "{} {} - OK".format(remote, btn)
-
+ 
 
 if __name__ == "__main__":
     print(curdir)
