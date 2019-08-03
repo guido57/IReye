@@ -169,22 +169,24 @@ To test if lirc driver is working, firstly stop the lirc deamon:
 sudo /etc/init.d/lircd stop
 ```
 then start a continuos IR receiver:
-### ```
+```
 mode2 -d /dev/lirc0
 ```
 now try to press a key of any infrared remote control in front of the IR LED receiver and you should see multiple lines like below
-```#
+```
 pulse 560
 space 1706
 pulse 535
 ```
-# Install Flask and basic_auth
-### ```
+# Install Flask, Flask-BasicAuth, python IRsend.py module and WebRtcIR.html web page
+### 1. Install Flask and Flask-BasicAuth 
+```
 pip install Flask 
 pip install Flask-BasicAuth
 ```
-### copy 
-# and configure a python flask web server
+### 2. Copy IRsend.py into /usr/share/uv4l/ 
+### 3. Copy WebRtcIR.htrml into /usr/share/uv4l/templates
+
 
 
 # Screenshots
