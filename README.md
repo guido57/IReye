@@ -141,8 +141,8 @@ DEVICE="/dev/lirc0"
 MODULES="lirc_rpi"
 ```
 
-#
-##   Update the following line in /boot/config.txt
+
+### 4. Update the following line in /boot/config.txt
 See point 2 for the correct pin settings.
 ```
 dtoverlay=lirc-rpi,gpio_in_pin=23,gpio_out_pin=2
@@ -152,7 +152,7 @@ dtoverlay=lirc-rpi,gpio_in_pin=23,gpio_out_pin=2
 driver    = default
 device    = /dev/lirc0
 ```
-6. Restart the lirc daemon and check its status 
+### 6. Restart the lirc daemon and check its status 
 ```
 sudo /etc/init.d/lircd stop
 sudo /etc/init.d/lircd start
@@ -163,13 +163,16 @@ then reboot
 sudo reboot
 ```
 
-### Test lirc recorder
-1. To test if lirc driver is working:
+### 7. Test lirc recorder
+To test if lirc driver is working, firstly stop the lirc deamon:
 ```
 sudo /etc/init.d/lircd stop
+```
+then start a continuos IR receiver:
+```
 mode2 -d /dev/lirc0
 ```
-2. press a key of any infrared remote control in front of the IR LED receiver and you should see multiple lines like below
+now try to press a key of any infrared remote control in front of the IR LED receiver and you should see multiple lines like below
 ```
 pulse 560
 space 1706
@@ -177,7 +180,6 @@ pulse 535
 ```
 
 
+# Screenshots
 
-### Screenshots
-
-### Logic Diagram 
+# Logic Diagram 
