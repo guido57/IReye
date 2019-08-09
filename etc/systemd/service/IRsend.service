@@ -1,0 +1,14 @@
+[Unit]
+Description=Flask web app to send IR commands to a TV
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python IRsend.py > IRsend.log 2>&1
+WorkingDirectory=/usr/share/uv4l/www/
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
