@@ -22,7 +22,7 @@ With a Raspberry PI, equipped with a loudspeaker and optionally with a HDMI scre
 ### 2. Install "Raspbian Stretch with Desktop", I tested:
    - Stretch "	2018-11-13-raspbian-stretch.zip" downloaded and with "installation guide" at [Download Raspbian Stretch](http://downloads.raspberrypi.org/raspbian/images/raspbian-2018-11-15/)
    - DON'T DON'T DON'T install any newer version of the Raspian Kernel than this (Linux 4.14). Otherwise IR infrared transmitter won't work! Never do "sudo apt-get upgrade"
-### 3. (Optional, if you don't have screen, keyboard and mouse) Prepare the SD you just created for headless operations following these instructions. See also [Raspbian Stretch Headless Setup Proc##edure](https://www.raspberrypi.org/forums/viewtopic.php?t=191252) 
+### 3. (Optional, if you don't have screen, keyboard and mouse) Prepare the SD you just created for headless operations following these instructions. See also [Raspbian Stretch Headless Setup Procedure](https://www.raspberrypi.org/forums/viewtopic.php?t=191252) 
 
 # Install the USB camera and microphone
 ### 0. I tested Logitech C525 succesfully. Simply plug it into any USB port. C525 has an integrated microphone but if yours doesn't have it, plug a USB microphone in any USB port.
@@ -185,9 +185,41 @@ pip install Flask
 pip install Flask-BasicAuth
 ```
 ### 2. Copy IRsend.py into /usr/share/uv4l/ 
-### 3. Copy WebRtcIR.htrml into /usr/share/uv4l/templates
+### 3. Copy WebRtcIR.htrml into /usr/share/uv4l/templates/
 
+# Create a IRsend systemd service
+### 1. Copy IRsend.service into /etc/systemd/system/
+### 2. Create an empty log file in /usr/share/uv4l/www/ and assign it user permissions 
+```
+sudo touch IRsend.log
+```
+### 3. Assign ownership to the standard user "pi" 
+```
+sudo chown pi: IRsend.log
+```
+### 4. Start the IRsend service 
+```
+sudo systemctl start IRsend
+```
+### 5. Check if IRsend service started correctly.
 
+You should see something like this:
+```
+pi@raspberrypi:/usr/share/uv4l/www $ sudo systemctl status IRsend
+● IRsend.service - Flask web app to send IR commands to a TV
+   Loaded: loaded (/etc/systemd/system/IRsend.service; disabled; vendor preset: enabled)
+   Active: active (running) since Fri 2019-08-09 21:24:07 BST; 7ms ago
+ Main PID: 6556 (python)
+   CGroup: /system.slice/IRsend.service
+           └─6556 /usr/bin/python IRsend.py > IRsend.log 2>&1
+
+Aug 09 21:24:07 raspberrypi systemd[1]: Started Flask web app to send IR commands to a TV.
+```
+### 6. Now enable IRsend service, so that it will start automatically on boot
+```
+sudo systemctl stop IRsend
+sudo systemctl enable IRsend
+```
 
 # Screenshots
 
