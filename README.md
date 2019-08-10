@@ -30,7 +30,7 @@ With a Raspberry PI, equipped with a loudspeaker and optionally with a HDMI scre
 ### 2. Test your USB microphone (integrated with the webcam or not) with chromium-browser navigating to https://www.google.com and using the speech recognition 
 
 # Install uv4l library
-Install the uv4l library. For details see also [UV4L for Raspberry PI Installation Procedure](https://www.linux-### projects.org/uv4l/installation/) 
+Install the uv4l library. For details see also [UV4L for Raspberry PI Installation Procedure](https://www.linux-projects.org/uv4l/installation/) 
  
 ### 0. Add the uv4l repository to the list of apt repositories
 ```
@@ -181,8 +181,8 @@ pulse 535
 # Install Flask, Flask-BasicAuth, python IRsend.py module and WebRtcIR.html web page
 ### 1. Install Flask and Flask-BasicAuth 
 ```
-pip install Flask 
-pip install Flask-BasicAuth
+sudo pip install Flask 
+sudo pip install Flask-BasicAuth
 ```
 ### 2. Copy IRsend.py into /usr/share/uv4l/ 
 ### 3. Copy WebRtcIR.htrml into /usr/share/uv4l/templates/
