@@ -145,7 +145,7 @@ MODULES="lirc_rpi"
 ### 4. Update the following line in /boot/config.txt
 See point 2 for the correct pin settings.
 ```
-dtoverlay=lirc-rpi,gpio_in_pin=23,gpio_out_pin=2
+dtoverlay=lirc-rpi,gpio_in_pin=23,gpio_out_pin=22
 ```
 ### 5. Update the following lines in /etc/lirc/lirc_options.conf
 ```
