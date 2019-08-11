@@ -2,7 +2,7 @@
 An unattended Raspberry PI 3 with webcam and Infrared remote control
 
 ## Overview
-With a Raspberry PI, equipped with a loudspeaker and optionally with a HDMI screen, you can connect to it to:
+With a Raspberry PI, equipped with an audio class D amplifier, a loudspeaker and optionally with a HDMI screen, you can connect to it to:
 
 - issue IR commands to a TV or similar
 - view the USB camera connected to the PI
@@ -15,6 +15,9 @@ With a Raspberry PI, equipped with a loudspeaker and optionally with a HDMI scre
 
 # Hardware picture
 [![](https://github.com/guido57/IReye/blob/master/screenshots/IReye%20picture%20with%20labels.PNG)](https://github.com/guido57/IReye/blob/master/screenshots/IReye%20picture%20with%20labels.PNG)
+
+# Hardware Components
+### 1. Audio Ampilfier. I Chose a PAM8403 5V 3W Class D Audio Ampifier like [this](https://www.amazon.it/Muzoct-PAM8403-Digital-Amplificatore-Classe/dp/B07791Z9WC/ref=sr_1_14?keywords=pam8403&qid=1565554203&s=gateway&sr=8-14)
 
 # Prepare your Raspberry
 ### 0. I used a [Raspberry PI 3 Model B Scheda madre CPU 1.2 GHz Quad Core, 1 GB RAM](https://www.amazon.it/gp/product/B01CD5VC92/ref=oh_aui_search_detailpage?ie=UTF8&psc=1) bought at Amazon
