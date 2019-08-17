@@ -66,7 +66,8 @@ This page should appear:
 For Google Chrome and other recent browsers versions is mandatory to use https insead of http.
 
 ### 0. Generate a selfsigned certificate and use it in uv4l web server
-``` sudo openssl genrsa -out selfsign.key 2048 && sudo openssl req -new -x509 -key selfsign.key -out selfsign.crt -sha256
+``` 
+sudo openssl genrsa -out selfsign.key 2048 && sudo openssl req -new -x509 -key selfsign.key -out selfsign.crt -sha256
 ``` 
 ### 1. Move the certificate to the proper folder
 ``` 
