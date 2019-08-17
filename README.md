@@ -13,9 +13,6 @@ With a Raspberry PI, equipped with an audio class D amplifier, a loudspeaker and
 - The lirc libray is installed on the PI. 
 - See the logic diagram below also.
 
-# Infrared TX & RX schematic
-[![](https://github.com/guido57/IReye/blob/master/screenshots/IR_TX_RX.PNG)](https://github.com/guido57/IReye/blob/master/screenshots/IR_TX_RX.PNG)
-
 # A picture
 [![](https://github.com/guido57/IReye/blob/master/screenshots/IReye%20picture%20with%20labels.PNG)](https://github.com/guido57/IReye/blob/master/screenshots/IReye%20picture%20with%20labels.PNG)
 
@@ -226,6 +223,8 @@ Aug 09 21:24:07 raspberrypi systemd[1]: Started Flask web app to send IR command
 sudo systemctl stop IRsend
 sudo systemctl enable IRsend
 ```
+# Infrared TX & RX schematic
+[![](https://github.com/guido57/IReye/blob/master/screenshots/IR_TX_RX.PNG)](https://github.com/guido57/IReye/blob/master/screenshots/IR_TX_RX.PNG)
 
 # Screenshots
 
