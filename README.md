@@ -227,7 +227,7 @@ sudo systemctl enable IRsend
 # Activate a WIFI hotspot (access point)
 In this way your IReye can be reacche using VNC or SSH and properly configured.
 
-Follow this instructions [![Set a Raspberry WIFI hotspot (access point) and client](https://github.com/guido57/Raspberry-WIFI-hotspot)](https://github.com/guido57/Raspberry-WIFI-hotspot)
+Follow this instructions [Set a Raspberry WIFI hotspot (access point) and client](https://github.com/guido57/Raspberry-WIFI-hotspot)
  
 # Infrared TX & RX schematic
 [![](https://github.com/guido57/IReye/blob/master/screenshots/IR_TX_RX.PNG)](https://github.com/guido57/IReye/blob/master/screenshots/IR_TX_RX.PNG)
