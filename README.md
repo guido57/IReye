@@ -13,7 +13,10 @@ With a Raspberry PI, equipped with an audio class D amplifier, a loudspeaker and
 - The lirc libray is installed on the PI. 
 - See the logic diagram below also.
 
-# Hardware picture
+# Infrared TX & RX schematic
+[![](https://github.com/guido57/IReye/blob/master/screenshots/IR_TX_RX.PNG)](https://github.com/guido57/IReye/blob/master/screenshots/IR_TX_RX.PNG)
+
+# A picture
 [![](https://github.com/guido57/IReye/blob/master/screenshots/IReye%20picture%20with%20labels.PNG)](https://github.com/guido57/IReye/blob/master/screenshots/IReye%20picture%20with%20labels.PNG)
 
 # Hardware Components
