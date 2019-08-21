@@ -2,15 +2,15 @@
 An unattended Raspberry PI 3 with webcam and Infrared remote control
 
 ## Overview
-With a Raspberry PI, equipped with an audio class D amplifier, a loudspeaker and optionally with a HDMI screen, you can connect to it to:
+Remotely connect via web to a Raspberry PI, equipped with an audio class D amplifier, a loudspeaker and optionally with a HDMI screen, to:
 
 - issue IR commands to a TV or similar
 - view the USB camera connected to the PI
 - listen from the USB microphone connected to the PI
 
 # Libraries
-- The uv4l software platform, with uv4l web and streaming servers run in the PI.
-- The lirc libray is installed on the PI. 
+- The uv4l software platform with uv4l web and streaming servers run in the PI.
+- The lirc (infrared) library is installed on the PI. 
 - See the logic diagram below also.
 
 # A picture
@@ -225,7 +225,7 @@ sudo systemctl stop IRsend
 sudo systemctl enable IRsend
 ```
 # Activate a WIFI hotspot (access point)
-In this way your IReye can be reacche using VNC or SSH and properly configured.
+In this way your IReye can be reached using VNC or SSH and properly configured.
 
 Follow this instructions [Set a Raspberry WIFI hotspot (access point) and client](https://github.com/guido57/Raspberry-WIFI-hotspot)
  
