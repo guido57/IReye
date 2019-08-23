@@ -14,7 +14,7 @@ Remotely connect via web to a Raspberry PI, equipped with an audio class D ampli
 - See the logic diagram below also.
 
 # A picture
-[![](https://github.com/guido57/IReye/blob/master/screenshots/IReye%20picture%20with%20labels.PNG)](https://github.com/guido57/IReye/blob/master/screenshots/IReye%20picture%20with%20labels.PNG)
+[![](https://github.com/guido57/IReye/blob/master/screenshots/IReye.pdf)](https://github.com/guido57/IReye/blob/master/screenshots/IReye.pdf)
 
 # Hardware Components
 ### 1. Audio Ampilfier. I Chose a PAM8403 5V 3W Class D Audio Ampifier like [this](https://www.amazon.it/Muzoct-PAM8403-Digital-Amplificatore-Classe/dp/B07791Z9WC/ref=sr_1_14?keywords=pam8403&qid=1565554203&s=gateway&sr=8-14)
