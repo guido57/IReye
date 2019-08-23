@@ -13,8 +13,8 @@ Remotely connect via web to a Raspberry PI, equipped with an audio class D ampli
 - The lirc (infrared) library is installed on the PI. 
 - See the logic diagram below also.
 
-# A picture
-[![](https://github.com/guido57/IReye/blob/master/screenshots/IReye.pdf)](https://github.com/guido57/IReye/blob/master/screenshots/IReye.pdf)
+# Logic diagram
+[![](https://github.com/guido57/IReye/blob/master/screenshots/IReye%20logic%20diagram.jpg)](https://github.com/guido57/IReye/blob/master/screenshots/IReye%20logic%20diagram.jpg)
 
 # Hardware Components
 ### 1. Audio Ampilfier. I Chose a PAM8403 5V 3W Class D Audio Ampifier like [this](https://www.amazon.it/Muzoct-PAM8403-Digital-Amplificatore-Classe/dp/B07791Z9WC/ref=sr_1_14?keywords=pam8403&qid=1565554203&s=gateway&sr=8-14)
