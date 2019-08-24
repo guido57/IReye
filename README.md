@@ -244,7 +244,11 @@ Aug 09 21:24:07 raspberrypi systemd[1]: Started Flask web app to send IR command
 sudo systemctl stop IRsend
 sudo systemctl enable IRsend
 ```
-# Activate a WIFI hotspot (access point)
+# Test the WebRtcIR.html website
+Navigate to: https://localhost/webrtcir.html:8092
+
+
+# Activate a WIFI hotspot (access point) - OPTIONAL
 In this way your IReye can be reached using VNC or SSH and properly configured.
 
 Follow this instructions [Set a Raspberry WIFI hotspot (access point) and client](https://github.com/guido57/Raspberry-WIFI-hotspot)
