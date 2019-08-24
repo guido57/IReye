@@ -209,7 +209,7 @@ sudo pip install Flask
 sudo pip install Flask-BasicAuth
 ```
 ### 2. Copy IRsend.py into /usr/share/uv4l/ 
-### 3. Copy WebRtcIR.htrml into /usr/share/uv4l/templates/
+### 3. Copy WebRtcIR.html into /usr/share/uv4l/templates/
 
 # Create a IRsend systemd service
 ### 1. Copy IRsend.service into /etc/systemd/system/
