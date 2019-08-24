@@ -28,8 +28,8 @@ Remotely connect via web to a Raspberry PI, equipped with an audio class D ampli
 ### 3. (Optional, if you don't have screen, keyboard and mouse) Prepare the SD you just created for headless operations following these instructions. See also [Raspbian Stretch Headless Setup Procedure](https://www.raspberrypi.org/forums/viewtopic.php?t=191252) 
 
 # Install the USB camera and microphone
-### 0. I tested Logitech C525 succesfully. Simply plug it into any USB port. C525 has an integrated microphone but if yours doesn't have it, plug a USB microphone in any USB port.
-### 1. Test your USB webcam with chromium-browser navigating to a site like [webrtc Hacks](https://webrtchacks.github.io/WebRTC-Camera-Resolution/)
+### 0. I tested "Logitech C525" and "Trust SPOTLIGHT PRO" succesfully. Simply plug it into any USB port. Both have an integrated microphone but if yours doesn't have it, plug a USB microphone in any USB port.
+### 1. Test your USB webcam with chromium-browser navigating to a site like this [webrtc Hacks](https://webrtchacks.github.io/WebRTC-Camera-Resolution/)
 ### 2. Test your USB microphone (integrated with the webcam or not) with chromium-browser navigating to https://www.google.com and using the speech recognition 
 
 # Install uv4l library
@@ -80,7 +80,27 @@ server-option = --use-ssl=yes
 server-option = --ssl-private-key-file=/etc/uv4l/selfsign.key
 server-option = --ssl-certificate-file=/etc/uv4l/selfsign.crt
 ```
-### 3. After rebooting, verify that[https://localhost:8090](https://localhost:8090) is accessible by your Raspberry PI browser
+### 3. Set OPENSSL_CONF in Raspbian Buster only!
+In Raspian Buster only it looks like the environment OPENSSL_CONF='/etc/ssl/' is not set.
+For this reason, uv4l works fine with http but it doesn't with https. Therefore add the line 
+```
+Environment="OPENSSL_CONF='/etc/ssl/'"
+```
+to /etc/systemd/system/uv4l_uvc@.service in this way:
+```
+[Unit]
+Description=UV4L UVC driver
+
+[Service]
+Type=simple
+Environment="OPENSSL_CONF='/etc/ssl/'" # <------------ this line added
+ExecStart=/etc/init.d/uv4l_uvc add %I
+ExecStop=/etc/init.d/uv4l_uvc remove %I
+RemainAfterExit=yes
+KillMode=none
+```
+
+### 4. After rebooting, verify that[https://localhost:8090](https://localhost:8090) is accessible by your Raspberry PI browser
 
 # Enable your USB microphone in uv4l
 ### 1. Change (or create) your ALSA config file /home/pi/.asoundrc
